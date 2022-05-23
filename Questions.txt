@@ -1,0 +1,20 @@
+1. The map interface is an object that maps keys to values. That map cannot contain duplicate keys; 
+each key can map to at most one value. This interface acts as the dictionary class. Now looking at the 
+oracle description of the class TreeMap, this is a red-bllack treed based implementation. The map is sorted
+according to the natural ordering of its keys, or by a comparator provided at map creation time. TreeMaps
+are not allowed to have null keys if using a natural ordering or comparator does not support comparison on null
+keys. In the case of this project, the HashTable was preferable because values were not stored in a sorted order.
+The basic idea behind hashing is to distribute key/value pairs across a list of buckets in the hashtable. This assignment
+called for HashMapp because were are prioritzing peformance over memory consumption. Applications like our SymTable class are
+better suited for HashMaps due to it being more general purpose and having fast retrieval. TreeMaps are better used in situations
+where entries are to be sorted and due to the TreeMap having more significant locality, we might consider it if we want to 
+access objects that are relatively close to each other according to natural ordering. A more specific application of the
+TreeMap would be for algorithms where we want sorted or navigable features are required. This would work in an example where
+we are to find among a list of employees whose salary is next to given employee, i.e a range search. 
+
+2. The implementation that I chose for this assignment was a LinkedList. To me, it was preferable because manipulating LinkedLists
+take less time compared to ArrayLists due to the doubly-linked list having no concept of shifting the memory bits. The list is traversed
+and the reference link is changed. LinkedLists after doing more research are supposed to work better when the application demands manipulation
+of the stored data. Specifically, in removeScope() we manipulate the data by removing the HashMap from the front of the list. LinkedLists will go through each element
+and remove the first one. ArrayLists, on the otherhand, will need to shift the references of all elements in the memory after removing the first element. Thus, I thought LinkedLists were 
+preferable. 
